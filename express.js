@@ -26,20 +26,18 @@ app.post('/api/user', (req, res) =>{
 })
 
 app.put('/api/user/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const updateUser = req.body;
+   
+    const userId = parseInt(req.params.id)
+    const updateUse = req.body;
 
-    // Find the user by id
-    const userIndex = users.findIndex(user => user.id === id);
-
-    if (userIndex === -1) {
-        return res.status(404).json({ message: 'User not found' });
+    const userIndex = users.findIndex(user => user.id === id)
+    if(userIndex === -1){
+        res.status(404).json({message: 'User not found!'})
     }
-    // Update the user's information
-    users[userIndex] = {   //accesses the user object at that specific index in the users array.
-        ...users[userIndex],   
-        ...updateUser         
-    };
+    users[userIndex]= {
+        ...users[userIndex],
+        ...updateUse
+    }
     res.status(200).json({ message: 'User updated successfully', data: users[userIndex] });
 });
 
