@@ -27,14 +27,14 @@ app.post('/api/user', (req, res) =>{
 
 app.put('/api/user/:id', (req, res) => {
    
-    const userId = parseInt(req.params.id)
+    const id = parseInt(req.params.id)
     const updateUse = req.body;
 
     const userIndex = users.findIndex(user => user.id === id)
     if(userIndex === -1){
         res.status(404).json({message: 'User not found!'})
     }
-    users[userIndex]= {
+    users[userIndex] = {
         ...users[userIndex],
         ...updateUse
     }
