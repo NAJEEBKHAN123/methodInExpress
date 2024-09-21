@@ -22,7 +22,7 @@ app.post('/api/user', (req, res) =>{
         ...user
     }
     users.push(newUser)
-    res.status(201).json({message : 'User added successfully.', data: newUser})
+    res.status(201).json({message : 'User added successfully...', data: newUser})
 })
 
 app.put('/api/user/:id', (req, res) => {
@@ -45,13 +45,15 @@ app.put('/api/user/:id', (req, res) => {
 
 app.delete('/api/user/:id', (req, res) =>{
     const id = parseInt(req.params.id)
- 
+
     const userIndex = users.findIndex(user => user.id === id)
+
     if(userIndex === -1){
-        return res.status(404).json({message: 'User not found!'})
+        return res.status(404).json({message : 'User not found!'})
     }
+
     users.splice(userIndex, 1)
-    res.status(200).json({message: 'user Deleted successfully'})
+    res.status(200).json({message: 'User Deleted successfully'})
 
 })
 app.listen(PORT, () =>{
