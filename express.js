@@ -22,7 +22,7 @@ app.post('/api/user', (req, res) =>{
         ...user
     } 
     users.push(newUser)
-    res.status(201).json({message : 'User added successfully', data: newUser})
+    res.status(201).json({message : 'User added successfully.', data: newUser})
 })
 
 app.put('/api/user/:id', (req, res) => {
