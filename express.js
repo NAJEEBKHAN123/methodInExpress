@@ -11,7 +11,7 @@ const users = [
 ]
 
 app.get('/', (req, res) =>{ 
-    res.status(200).json({message : 'GET request successful', data: users})
+    res.status(200).json({message : 'GET request successfully', data: users})
 })
 
 app.post('/api/user', (req, res) =>{
