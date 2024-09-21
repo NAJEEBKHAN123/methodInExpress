@@ -6,7 +6,7 @@ const app =  express();
 app.use(express.json());
 
 const users = [
-    {id: 1, name: 'najee', email : "najeeb@gamil.com"},
+    {id: 1, name: 'najeeb', email : "najeeb@gamil.com"},
     {id: 2, name: 'nauman', email : "nauman@gamil.com"}
 ]
 
