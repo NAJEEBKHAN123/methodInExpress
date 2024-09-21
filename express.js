@@ -16,11 +16,11 @@ app.get('/', (req, res) =>{
 
 app.post('/api/user', (req, res) =>{
     const user = req.body;
-
+    
     const newUser = {
         id: users.length + 1,
         ...user
-    } 
+    }
     users.push(newUser)
     res.status(201).json({message : 'User added successfully.', data: newUser})
 })
