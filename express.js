@@ -38,7 +38,7 @@ app.put('/api/user/:id', (req, res) => {
         ...users[userIndex],
         ...updateUse
     }
-    res.status(200).json({ message: 'User updated successfully', data: users[userIndex] });
+    res.status(200).json({ message: 'User updated successfully.', data: users[userIndex] });
 });
 
 app.delete('/api/user/:id', (req, res) =>{
